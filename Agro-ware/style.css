@@ -1,0 +1,422 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap');
+
+*,
+*:after,
+*:before {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "DM Sans", sans-serif;
+    line-height: 1.5;
+    background-color: #f1f3fb;
+    padding: 0 2rem;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+
+// iOS Reset 
+input {
+    appearance: none;
+    border-radius: 0;
+}
+
+.card {
+    margin: 2rem auto;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 425px;
+    background-color: #FFF;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px 0 rgba(#999, .25);
+    padding: .75rem;
+}
+
+.card-image {
+    border-radius: 8px;
+    overflow: hidden;
+    padding-bottom: 65%;
+    background-image: url('logo.png');
+    background-repeat: no-repeat;
+    background-size: 50%;
+    background-position: 50%;
+    position: relative;
+}
+
+.card-heading {
+    position: absolute;
+    left: 10%;
+    top: 15%;
+    right: 10%;
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: #735400;
+    line-height: 1.222;
+
+    small {
+        display: block;
+        font-size: .75em;
+        font-weight: 400;
+        margin-top: .25em;
+    }
+}
+
+.card-form {
+    padding: 2rem 1rem 0;
+}
+
+.input {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    padding-top: 1.5rem;
+
+    &+.input {
+        margin-top: 1.5rem;
+    }
+}
+
+.input-label {
+    color: #8597a3;
+    position: absolute;
+    top: 1.5rem;
+    transition: .25s ease;
+}
+
+.input-field {
+    border: 0;
+    z-index: 1;
+    background-color: transparent;
+    border-bottom: 2px solid #eee;
+    font: inherit;
+    font-size: 1.125rem;
+    padding: .25rem 0;
+
+    &:focus,
+    &:valid {
+        outline: 0;
+        border-bottom-color: #6658d3;
+
+        &+.input-label {
+            color: #6658d3;
+            transform: translateY(-1.5rem);
+        }
+    }
+}
+
+.action {
+    margin-top: 2rem;
+}
+
+.action-button {
+    font: inherit;
+    font-size: 1.25rem;
+    padding: 1em;
+    width: 100%;
+    font-weight: 500;
+    background-color: #3ad36f;
+    border-radius: 6px;
+    color: #FFF;
+    border: 0;
+
+    &:focus {
+        outline: 0;
+    }
+}
+
+.card-info {
+    padding: 1rem 1rem;
+    text-align: center;
+    font-size: .875rem;
+    color: #8597a3;
+
+    a {
+        display: block;
+        color: #6658d3;
+        text-decoration: none;
+    }
+}
+header img {
+    height: 80px;
+    margin-left: 40px;
+}
+header {
+    background-color: white;
+    position: fixed;
+    top: 0;
+    z-index: 1;
+    left: 0;
+    right: 0;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 0 25px 0 black;
+}
+
+header * {
+    display: inline;
+}
+header li {
+    margin: 20px;
+}
+header li a {
+    color: black;
+    text-decoration: none;
+}
+nav.stroke ul li a,
+nav.fill ul li a {
+    position: relative;
+}
+
+nav.stroke ul li a:after,
+nav.fill ul li a:after {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 0%;
+    content: '.';
+    color: transparent;
+    background: #aaa;
+    height: 1px;
+}
+
+nav.stroke ul li a:hover:after {
+    width: 100%;
+}
+
+nav.stroke ul li a {
+    transition: all 2s;
+}
+
+nav.stroke ul li a:after {
+    text-align: left;
+    content: '.';
+    margin: 0;
+    opacity: 0;
+}
+
+nav.stroke ul li a:hover {
+    color: rgb(74, 199, 109);
+    background-color: #eee;
+    z-index: 1;
+}
+
+nav.stroke ul li a:hover:after {
+    z-index: -10;
+        animation: fill 1s forwards;
+        -webkit-animation: fill 1s forwards;
+        -moz-animation: fill 1s forwards;
+        opacity: 1;
+}
+#message {
+    display: none;
+    background: #f1f1f1;
+    color: #000;
+    position: relative;
+    padding: 20px;
+    margin-top: 10px;
+}
+
+#message p {
+    padding: 10px 35px;
+    font-size: 18px;
+}
+
+/* Add a green text color and a checkmark when the requirements are right */
+.valid {
+    color: green;
+}
+
+.valid:before {
+    position: relative;
+    left: -35px;
+    content: "&#10004;";
+}
+
+/* Add a red text color and an "x" icon when the requirements are wrong */
+.invalid {
+    color: red;
+}
+
+.invalid:before {
+    position: relative;
+    left: -35px;
+    content: "&#10006;";
+}
+.topnav-right {
+    float: right;
+}
+.action{
+    position:fixed;
+
+    right:30px
+}
+.action .profile{
+    position: relative;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    overflow: hidden;
+    cursor: pointer;
+}
+.action .profile img
+{
+    top:0;
+    left: 0;
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+}
+.action .menu
+
+{
+    position: absolute;
+    top: 80px;
+    right: -10px;
+    padding:10px 20px;
+    background: #fff;
+    width: 200px;
+    box-sizing: 0 5px rgba(0,0,0,0.1);
+    border-radius: 15px;
+    transition: 0.5s;
+    visibility: hidden;
+    
+}
+.action .menu .active{
+    visibility: visible;
+    opacity: 1;
+}
+.action .menu .before{
+    content: '';
+    position: abolute;
+    top: -5px;
+    right: 28px; 
+    width: 20px;
+    height: 20px;
+    background: #fff;
+    transform: rotate(45deg);
+}
+.action .menu h3{
+    width: 100%;
+    text-align: center;
+    font-size: 18px;
+    padding: 20px 0;
+    font-weight: 500;
+    font-size: 18px;
+    color: #555;
+    line-height: 1.2em;
+
+}
+.action .menu ul li{
+    list-style: none;
+    padding: 10px 0;
+    padding-top: 1px solid rgba(0,0,0,0.05);
+    display: flex;
+    align-items: center;
+    opacity: 0;
+}
+.action .menu ul li.action{
+    visibility: visible;
+}
+.action .menu ul li img{
+  max-width: 20px;
+  margin-right: 10px;
+  opacity: 0.5;
+  transition: 0.5s;  
+}
+.action .menu ul li:hover img{
+    opacity: 1;
+}
+.action .menu ul li a{
+    display: inline-block;
+    text-decoration: none;
+    color:#555;
+    font-weight:500;
+    transition:0.5s;
+}
+.action .menu ul li hover:a{
+    color: #3ad36f;
+}
+
+.formbut button{
+    top: 100px;
+    cursor: pointer;
+    /* padding-top: 500px; */
+    margin-left: 550;
+    color: black;
+    background-color: lightgreen;
+}
+.formbut p{
+    top: 100px;
+        margin-top: 400px;
+        /* padding-top: 500px; */
+        margin-left: 550;
+        color: black;
+}
+aside{
+    height: 100vh;
+    margin-left: -40px;
+    width: 15%;
+    float: left;
+    position: fixed;
+    margin-top: 50px;
+    background: white;
+    box-shadow: o 4px 8px 0 black;
+}
+.dashboard a{
+    color:#3ad36f;
+    display: block;
+    width: 100%;
+    line-height: 60px;
+    text-decoration: none;
+    padding-left: 40px;
+    box-sizing: border-box;
+    transform: 0.5s;
+
+}
+.dashboard a:hover{
+    background: #3ad36f;
+    color: white;
+
+}
+.dashboard >.active>a{
+    background: #3ad36f;
+    color: white;
+
+}
+.dashhead{
+    width: 100%;
+    height: 50px;
+    color: black;
+    align-items: center;
+    justify-content: center;
+}
+.dashhead h3{
+    margin-top: 50px;
+    margin-left: 40px;
+}
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    transition: 0.3s;
+    width: 40%;
+    border-radius: 5px;
+}
+
+.card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+img {
+    border-radius: 5px 5px 0 0;
+}
+
+.container {
+    padding: 2px 16px;
+}
